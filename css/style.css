@@ -188,7 +188,7 @@ body {
     background: #ebebeb;
     color: #3a3a3a;
     display: flex;          
-    height: auto;
+    height: 100px;
     margin-top: 40px;
     width: 100%;
 }
@@ -203,7 +203,12 @@ body {
 .candidate__container{
     align-items : center;
     display: flex;
-    flex-direction: column;       
+    flex-direction: column; 
+   
+}
+
+.candidate__info{
+    margin-top: 50%;  
 }
 
 .candidate{
@@ -235,14 +240,13 @@ body {
 
 .vote__footer{
     align-items: center;
-    border :1px solid  #3a3a3a;
+    background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/vote_footer_back.png);
     color: #3a3a3a;
     display : flex;   
     height: 80px;
     justify-content: space-between;
     text-align: center;
     width: 100%;   
-
 }
 
 .vote__footer__text{
@@ -253,13 +257,17 @@ body {
 }
 
 .vote__footer__link{
-    border: 1px solid #3a3a3a;
+    border: 3px solid #3a3a3a;
     color: #3a3a3a;
     font-weight: 150;
     font-size: 20px;
     margin:10px 25px 10px 25px;
     padding: 10px 25px 10px 25px;
     text-decoration: none;
+}
+
+.section__speak__icon{
+    width: 25px;
 }
 /*Footer*/
 .footer{
