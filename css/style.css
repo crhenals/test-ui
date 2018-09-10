@@ -15,7 +15,7 @@ body {
    background : url('../img/pope.png') no-repeat;
  
    height: 745px;
-   width: 1280px;
+   width: 100%;
    margin-left: auto;   
    margin-right: auto;   
    position: relative;   
@@ -184,9 +184,11 @@ color : #464646;
 }
 
 .wrapper{
-    width: 1024px;
+    
     margin:auto;
+    width: 100%;
 }
+/* Speak*/
 
 .section__speak{
    display: flex;
@@ -197,6 +199,7 @@ color : #464646;
     margin-top: 40px;
 }
 
+/*Vote*/
 .section__votes__title{
     color : #333333;
     font-weight: lighter;
@@ -205,8 +208,9 @@ color : #464646;
 
 .candidate__container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items : center;
+   
   
 }
 .candidate{
@@ -237,3 +241,18 @@ color : #464646;
     background: url('../img/malala.png');
 }
 
+@media (min-width: 1300px) { 
+    .header{
+        width: 1280px; 
+    }
+
+    .wrapper{
+        width: 1024px;
+    }
+
+    .candidate__container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    justify-content: space-between;
+    }
+ }
