@@ -13,7 +13,7 @@ body {
 /*header*/
 .header{
    background : url('../img/pope.png') no-repeat;
-   font-size: 20px;   
+ 
    height: 745px;
    width: 1280px;
    margin-left: auto;   
@@ -24,15 +24,42 @@ body {
 .header__section{
    height: 450px;
     max-width: 500px;
-    background: rgba(20,20,20,35%);
+    background: rgba(20,20,20,40%);
     position: relative;    
 }
 
 .header__section__article{
-    margin : 40px 32px 0 32px; 
+    font-weight: lighter;
+    padding : 25px 32px 0 32px; 
+    position: absolute;
 }
 
-.header__section__fotter{
+.header__section__article__link a{
+color: white;
+font-size:12px;
+}
+
+.header__section__article__title{
+    font-size: 60px;
+    font-weight: normal;
+    margin: 0;  
+}
+.header__section__article__title span{
+    font-weight: lighter;
+    font-size: 17px;
+    display: block;
+    margin-bottom: -6px;
+}
+
+.header__section__article__text{
+    font-size: 23px;
+    margin-top: 8px;
+}
+.header__section__article__icon{
+  width: 18px;
+}
+
+.header__section__footer{
     bottom: 0;
     width: 100%;
     height: 80px;    
@@ -41,7 +68,7 @@ body {
     vertical-align: middle;
 }
 
-.header__section__fotter_item{
+.header__section__footer_item{
     display: inline-block;
     height: 100%;
     width: 50%;   
@@ -49,52 +76,58 @@ body {
    
 }
 
-.header__section__fotter_item img{
+
+.header__section__footer_item img{
     width: 40px;
+    vertical-align: middle;
+
 
 }
 
-.header__section__fotter_item--left{  
+.header__section__footer_item--left{  
     background-color: rgba(46,188,181,0.8); 
 }
 
-.header__section__fotter_item--right{  
+.header__section__footer_item--right{  
     background-color: rgba(250,174,48,0.8);
    float: right;
 }
 
-.header__section__fotter_item--right img{  
+.header__section__footer_item--right img{  
     transform: rotate(180deg);
 }
 
-.header__fotter{
+.header__footer{
     bottom: 0;
     height: 50px;
     width: 100%;
     position: absolute;
 }
 
-.header__fotter__item{
-    height: 100%;
-    width: 50%;
+.header__footer__item{
+    height: 100%;    
     display: inline-block;   
 }
 
-.header__fotter--left{
-background: #707070;
+.header__footer--left{
+background: #70707050;
+width: 32%;
 }
-.header__fotter--left p{
+.header__footer--left p{
 text-align: right;
-    }
-
-.header__fotter--right{
- background: #ffffff;
- float: right;
+font-size: 15px;
 }
 
-.header__fotter--right p{
+.header__footer--right{
+ background: #ffffff50;
+ float: right;
+ width: 68%;
+}
+
+.header__footer--right p{
     text-align: left;
 color : #464646;
+
 }
 
 .navbar{   
@@ -102,10 +135,17 @@ color : #464646;
    width: 100%;
    background: rgba(20,20,20,25%);
    margin-bottom: 20px;
+   padding-top: 35px;
 }
 
 .navbar__section{
     display: inline-block; 
+}
+
+.navbar__section h1{
+    margin :0;
+    font-weight: 380;
+    font-size: 30px;
 }
 
 .navbar__section--rigth{
@@ -120,6 +160,9 @@ color : #464646;
 .navbar__section a{
     color :white;
     text-decoration: none;
+    font-weight: lighter;
+    font-size: 15px;
+    margin-left: 40px;
 }
 
 .navbar__section__item img{
@@ -132,3 +175,23 @@ color : #464646;
     margin:auto;
 }
 
+.section__speak{
+   display: flex;
+    width: 100%;
+    background: #ebebeb;
+    color: black;
+    height: auto;
+    margin-top: 40px;
+}
+
+.section__speak__title{
+    display : inline-block;
+}
+
+.section__speak__title span{
+    display :inline;
+}
+
+.section__speak__text{
+    display : inline-block;
+}
