@@ -130,12 +130,25 @@ color : #464646;
 
 }
 
+.header__footer--left::after {
+    border-top: 5px solid transparent;
+    border-left: 7px solid #3a3a3a45;
+    border-bottom: 7px solid transparent;
+    content: "";
+    height: 0;
+    left: 32%;
+    position: absolute;
+    top: 40%;
+    width: 0;
+    z-index: 2;
+}
+
 .navbar{   
-   height: 152px;
-   width: 100%;
-   background: rgba(20,20,20,25%);
-   margin-bottom: 20px;
-   padding-top: 35px;
+    height: 145px;
+    width: 100%;
+    background: rgba(20,20,20,25%);
+    margin-bottom: 26px;
+    padding-top: 35px;
 }
 
 .navbar__section{
@@ -179,19 +192,48 @@ color : #464646;
    display: flex;
     width: 100%;
     background: #ebebeb;
-    color: black;
+    color: #333333;
     height: auto;
     margin-top: 40px;
 }
 
-.section__speak__title{
-    display : inline-block;
+.section__votes__title{
+    color : #333333;
+    font-weight: lighter;
+    font-size: 35px;
 }
 
-.section__speak__title span{
-    display :inline;
+.candidate__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+}
+.candidate{
+    width: 490px;
+    height: 550px;
+    margin-bottom: 40px;
+
 }
 
-.section__speak__text{
-    display : inline-block;
+.candidate__name{
+    font-size: 39px;
+    margin-bottom: 0;
 }
+
+.candidate--1{
+    background: url('../img/kanye-west.png');
+}
+
+.candidate--2{
+    background: url('../img/cristina.png');
+}
+
+.candidate--3{
+    background: url('../img/mark.png');
+}
+
+.candidate--4{
+    background: url('../img/malala.png');
+}
+
