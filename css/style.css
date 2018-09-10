@@ -261,6 +261,27 @@ body {
     padding: 10px 25px 10px 25px;
     text-decoration: none;
 }
+/*Footer*/
+.footer{
+    border-top: 1px dashed #979797;
+    color: #979797;
+    display: flex;
+    font-size: 10px;  
+    justify-content:space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 35px;    
+    width: 100%;    
+}
+
+.footer__link{
+    text-decoration: none;
+  
+}
+
+.footer__social__icon{
+    width: 20px;
+}
 
 @media (min-width: 1300px) { 
     .header{
