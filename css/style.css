@@ -33,9 +33,15 @@ body {
     position: absolute;
 }
 
+.header__section__article p:last-child{
+    font-weight: normal;
+    font-size: 20px;
+    
+}
+
 .header__section__article__link a{
     color: white;
-    font-size:12px;
+    font-size:14px;
 }
 
 .header__section__article__title{
@@ -77,7 +83,7 @@ body {
 }
 
 .header__section__footer_item img{
-    vertical-align: middle;
+    margin-top:20px;
     width: 40px;
 }
 
@@ -123,7 +129,14 @@ body {
 
 .header__footer--right p{
     color : #464646;
-    text-align: left;
+    font-size: 40px;
+    margin-top: 0;
+    text-align: left;   
+}
+
+.header__footer--right span{
+    font-weight: normal;
+    margin-left: 10px;    
 }
 
 .header__footer--left::after {
@@ -140,7 +153,7 @@ body {
 }
 
 .navbar{   
-    background: rgba(20,20,20,25%);
+    background: rgba(20,20,20,25%);    
     height: 145px;  
     margin-bottom: 26px;
     padding-top: 35px;
@@ -186,11 +199,27 @@ body {
 /* Speak*/
 .section__speak{
     background: #ebebeb;
-    color: #3a3a3a;
-    display: flex;          
-    height: 100px;
+    color: #3a3a3a;         
+    height: auto;
     margin-top: 40px;
     width: 100%;
+}
+
+.section__speak__article{
+    align-items :center;
+    display:flex;
+    
+}
+
+.section__speak__title{
+    font-weight: bold;
+    margin-left: 40px;
+    width: 35%;
+}
+
+.section__speak__title span{
+    font-weight: lighter;
+    font-size: 20px;
 }
 /*Vote*/
 .section__votes__title{
@@ -200,21 +229,20 @@ body {
     text-align: center;
 }
 
-.candidate__container{
-    align-items : center;
+.candidate__container{   
     display: flex;
-    flex-direction: column; 
-   
+    flex-direction: column;
+    width: 100%;  
 }
 
 .candidate__info{
-    margin-top: 50%;  
+     margin-top: 45%  
 }
 
 .candidate{
-    height: 550px;
     margin-bottom: 40px;
-    width: 490px;
+    margin-left: auto;
+    width: 100%;
 }
 
 .candidate__name{
@@ -223,22 +251,26 @@ body {
 }
 
 .candidate--1{
-    background: url('../img/kanye-west.png');
+    background: url('../img/kanye-west.png') no-repeat;    
+    background-size: cover;
 }
 
 .candidate--2{
-    background: url('../img/mark.png');    
+    background: url('../img/mark.png') no-repeat;  
+    background-size: cover;
 }
 
 .candidate--3{
-    background: url('../img/cristina.png');
+    background: url('../img/cristina.png') no-repeat;
+    background-size: cover;
 }
 
 .candidate--4{
-    background: url('../img/malala.png');
+    background: url('../img/malala.png') no-repeat;    
+    background-size: cover;
 }
 
-.vote__footer{
+.vote__footer__container{
     align-items: center;
     background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/vote_footer_back.png);
     color: #3a3a3a;
@@ -249,14 +281,14 @@ body {
     width: 100%;   
 }
 
-.vote__footer__text{
+.vote__footer--text{
     display: inline-block;
     font-weight: 150;
     font-size: 30px;
     margin-left: 15px;
 }
 
-.vote__footer__link{
+.vote__footer--link{
     border: 3px solid #3a3a3a;
     color: #3a3a3a;
     font-weight: 150;
@@ -291,7 +323,7 @@ body {
     width: 20px;
 }
 
-@media (min-width: 1300px) { 
+@media (min-width: 1280px) { 
     .header{
         width: 1280px; 
     }
@@ -300,13 +332,59 @@ body {
         width: 1024px;
     }
 
+    .section__votes__title{
+        text-align: left;
+    }
+}
+
+@media (min-width: 1000px){
     .candidate__container{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    .section__votes__title{
-        text-align: left;
+    .candidate{
+        height: 550px;
+        margin-bottom: 40px;
+        margin-left:0;
+        width: 490px;        
     }
+}
+
+@media (max-width: 620px) { 
+    .section__speak__title span, .section__speak__title{
+        font-weight: 200;
+        font-size: 25px;    
+    }
+    .vote__footer{
+        font-weight: 150;
+        font-size: 20px;  
+    }
+
+    .vote__footer--text{
+        display: inline-block;       
+        margin-left: 15px;
+    }
+
+    .vote__footer--link{
+        display: inline-block;       
+        padding: 5px 15px 5px 15px;
+    }   
+    /* */
+    .header__section__article p:last-child{
+        font-weight: normal;
+        font-size: 15px;        
+    }
+
+    .header__section__article__text{
+        font-size: 18px;       
+    }
+
+    .header__section__article__title{
+        font-weight: normal;
+        font-size: 30px;
+        margin: 0;  
+    }
+
 }
