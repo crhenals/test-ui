@@ -35,8 +35,7 @@ body {
 
 .header__section__article p:last-child{
     font-weight: normal;
-    font-size: 20px;
-    
+    font-size: 20px;    
 }
 
 .header__section__article__link a{
@@ -140,9 +139,9 @@ body {
 }
 
 .header__footer--left::after {
-    border-top: 5px solid transparent;
-    border-left: 7px solid #3a3a3a45;
     border-bottom: 7px solid transparent;
+    border-left: 7px solid #3a3a3a45;
+    border-top: 5px solid transparent;  
     content: "";
     height: 0;
     left: 32%;
@@ -153,9 +152,9 @@ body {
 }
 
 .navbar{   
-    background: rgba(20,20,20,25%);    
-    height: 145px;  
-    margin-bottom: 26px;
+    background: rgba(20,20,20,6%);
+    height: 115px;
+    margin-bottom: 56px;
     padding-top: 35px;
     width: 100%;
 }
@@ -207,8 +206,7 @@ body {
 
 .section__speak__article{
     align-items :center;
-    display:flex;
-    
+    display:flex;    
 }
 
 .section__speak__title{
@@ -221,6 +219,10 @@ body {
     font-weight: lighter;
     font-size: 20px;
 }
+
+.section__speak__icon{
+    width: 25px;
+}
 /*Vote*/
 .section__votes__title{
     color : #3a3a3a;    
@@ -231,28 +233,126 @@ body {
 
 .candidate__container{   
     display: flex;
-    flex-direction: column;
-    width: 100%;  
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .candidate__info{
-     margin-top: 45%  
+    bottom: 50px;
+    margin-left: 0;
+    position: absolute;
+    height: 270px;
+    width: 100%
 }
 
-.candidate{
-    margin-bottom: 40px;
-    margin-left: auto;
+.candidate__info__category {
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.candidate__info__category span{
+    font-weight: normal;
+}
+
+.candidate__like img, .candidate__dislike img{
+  
+    width: 20px;
+}
+.candidate__info__category{
+    margin-left: 35px;
+
+}
+
+.candidate__result{
+    background-color: rgba(250,174,48,0.8);
+    bottom: 0;
+    border: 1px solid whitesmoke;
+    display: flex;
+    height: 50px;
+    position: absolute;
     width: 100%;
 }
 
+.candidate__result--dislike{
+    background-color: rgba(46,188,181,0.8); 
+    height: 100%;
+    width: 50%;
+}
+
+.candidate__result__icon{
+    height: 25px;
+    margin-top: 10px;
+    position: absolute;
+    width: 25px;
+}
+
+.candidate__result__icon--dislike{
+    right :10px;
+    transform: rotate(180deg);
+}
+
+.candidate__result__icon--like{
+    left :10px;
+}
+
+.candidate_vote{
+    display :none;
+    margin-left: 35px;
+    margin-right: 50px;
+}
+
+.candidate__like, .candidate__dislike{
+    display: inline-block;
+    height: 35px;
+    padding-top: 7px;
+    padding-left: 7px;
+    width: 35px;
+}
+.candidate__like{
+    background-color: rgb(46,188,181);    
+
+}
+
+.candidate_vote{
+    display:none;
+}
+
+.candidate_vote__text{
+    font-size: 18px;
+}
+
+.candidate__dislike{
+    background-color: rgb(250,174,48);
+}
+
+.container-title{
+    display: inline-block;
+    height: auto;
+    width: 100%;    
+}
+
+.candidate{
+    height: 550px;
+    margin-bottom: 40px;          
+    position: relative;  
+    vertical-align:middle; 
+    width: 100%;  
+}
+
 .candidate__name{
+    display: inline-block;
     font-size: 39px;
-    margin-bottom: 0;
+    margin: 0;
+    width: 70%;
+}
+
+.candidate__like--vote{
+    margin-right: 15px;
 }
 
 .candidate--1{
-    background: url('../img/kanye-west.png') no-repeat;    
-    background-size: cover;
+    background: url('../img/kanye-west.png') no-repeat;   
+    background-size: cover;    
 }
 
 .candidate--2{
@@ -270,6 +370,22 @@ body {
     background-size: cover;
 }
 
+.result__like{
+    font-size: 30px;
+    margin: 0;
+    position: absolute;
+    left: 35px;
+    top: 5px;
+}
+
+.result__dislike{
+    font-size: 30px;
+    margin: 0;
+    position: absolute;
+    right: 35px;
+    top: 5px;
+}
+
 .vote__footer__container{
     align-items: center;
     background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/vote_footer_back.png);
@@ -279,6 +395,21 @@ body {
     justify-content: space-between;
     text-align: center;
     width: 100%;   
+}
+
+.button{
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+.vote{
+    margin-right: 15px;
+}
+
+.vote__message{
+    margin-left: 35px;
 }
 
 .vote__footer--text{
@@ -298,9 +429,7 @@ body {
     text-decoration: none;
 }
 
-.section__speak__icon{
-    width: 25px;
-}
+
 /*Footer*/
 .footer{
     align-items : center;
@@ -317,6 +446,7 @@ body {
 .footer__social__icon,.footer__text{
     margin-left: 15px;
 }
+
 
 .footer__link{
     color: #979797;    
@@ -350,11 +480,13 @@ body {
     }
 
     .candidate{
-        height: 550px;
         margin-bottom: 40px;
-        margin-left:0;
-        width: 490px;        
+        margin-left: 0;
+        
+        width: 500px;
     }
+
+    
 }
 
 @media (max-width: 620px) { 
@@ -395,5 +527,4 @@ body {
         flex-direction: column;
         font-size: 10px;  
     }
-
 }
