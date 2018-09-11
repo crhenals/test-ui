@@ -303,20 +303,25 @@ body {
 }
 /*Footer*/
 .footer{
+    align-items : center;
     border-top: 1px dashed #979797;
     color: #979797;
     display: flex;
-    font-size: 10px;  
+    font-size: 12px;  
     justify-content:space-between;
     margin-top: 40px;
     margin-bottom: 40px;
     padding-top: 35px;    
     width: 100%;    
 }
+.footer__social__icon,.footer__text{
+    margin-left: 15px;
+}
 
 .footer__link{
-    text-decoration: none;
-  
+    color: #979797;    
+    margin-right: 10px;
+    text-decoration: none;  
 }
 
 .footer__social__icon{
@@ -385,6 +390,10 @@ body {
         font-weight: normal;
         font-size: 30px;
         margin: 0;  
+    }
+    .footer{
+        flex-direction: column;
+        font-size: 10px;  
     }
 
 }
