@@ -10,6 +10,14 @@ body {
     margin: 0; 
     width: 100%;
 }
+
+.active{
+    display: block;
+}
+
+.none{
+    display: none;
+}
 /*header*/
 .header{
     background : url('../img/pope.png') no-repeat;
@@ -95,7 +103,7 @@ body {
     float: right;
 }
 
-.header__section__footer_item--right img{  
+.header__section__footer_item--right img,.candidate__dislike--vote{  
     transform: rotate(180deg);
 }
 
@@ -295,8 +303,7 @@ body {
     left :10px;
 }
 
-.candidate_vote{
-    display :none;
+.candidate_vote{    
     margin-left: 35px;
     margin-right: 50px;
 }
@@ -311,10 +318,6 @@ body {
 .candidate__like{
     background-color: rgb(46,188,181);    
 
-}
-
-.candidate_vote{
-    display:none;
 }
 
 .candidate_vote__text{
