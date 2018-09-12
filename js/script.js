@@ -5,30 +5,31 @@ const  result      = document.getElementsByClassName('candidate__result--dislike
 const  result_like = document.getElementsByClassName('result__like');
 const  result_dislike = document.getElementsByClassName('result__dislike');
 const  candidate   = document.getElementsByClassName('vote__message');
-let    data        = JSON.parse(localStorage.getItem('votes'));
+let    data;
 
-console.log(data);
-
-    let dataVotes=[
+function load(){
+    data = JSON.parse(localStorage.getItem('votes'));
+    console.log('data '+data[0].like);
+    dataVotes=[
         {
-            likes: data == undefined ? 0 : data[0].like,
-            dislikes: data == undefined ? 0 : data[0].dislike
+            likes: data == undefined ? 0 : data[0].likes,
+            dislikes: data == undefined ? 0 : data[0].dislikes
           },
           {
-            likes: data == undefined ? 0 : data[1].like,
-            dislikes: data == undefined ? 0 : data[1].dislike
+            likes: data == undefined ? 0 : data[1].likes,
+            dislikes: data == undefined ? 0 : data[1].dislikes
           },
           {
-            likes: data == undefined ? 0 : data[2].like,
-            dislikes: data == undefined ? 0 : data[2].dislike
+            likes: data == undefined ? 0 : data[2].likes,
+            dislikes: data == undefined ? 0 : data[2].dislikes
           },
           {
-            likes: data == undefined ? 0 : data[3].like,
-            dislikes: data == undefined ? 0 : data[3].dislike
+            likes: data == undefined ? 0 : data[3].likes,
+            dislikes: data == undefined ? 0 : data[3].dislikes
           }
-        ]
+    ]   
+}  
 
-console.log(dataVotes);
 function save(){   
     localStorage.setItem('votes',JSON.stringify(dataVotes));     
 }
@@ -41,19 +42,19 @@ function vote(p_element,p_like,p_dislike){
     candidate_dislikes  = candidate_dislikes + p_dislike;
     dataVotes[p_element].likes = candidate_likes;
     dataVotes[p_element].dislikes = candidate_dislikes;    
-   save();
+    save();
 }
 
 function paint(i_result){
     let candidate_likes     = dataVotes[i_result].likes;
     let candidate_dislikes  = dataVotes[i_result].dislikes;
     let total = candidate_likes + candidate_dislikes;
-
+   console.log('10. '+candidate_likes);
     if(total > 0){
         let perc_like = Math.round((candidate_likes / total) * 100);
         let perc_dislike = Math.round((candidate_dislikes / total) * 100);
-        result_like[i_result].innerHTML = perc_like;
-        result_dislike[i_result].innerHTML = perc_dislike; 
+        result_like[i_result].innerHTML = `${perc_like}%`;
+        result_dislike[i_result].innerHTML = `${perc_dislike}%`; 
         result[i_result].style.width = `${perc_like}%`;
     }    
 }
@@ -86,3 +87,10 @@ for(let i_votes=0; i_votes<votes.length;i_votes++){
         }
     });
 }
+
+window.addEventListener('load', function(e) {
+    load();     
+    for (let i_candidate=0;i_candidate<candidate.length;i_candidate++){
+        paint(i_candidate); 
+    }        
+})
