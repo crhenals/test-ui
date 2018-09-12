@@ -4,8 +4,12 @@ const  likes       = document.getElementsByClassName('vote__like');
 const  result      = document.getElementsByClassName('candidate__result--dislike'); 
 const  result_like = document.getElementsByClassName('result__like');
 const  result_dislike = document.getElementsByClassName('result__dislike');
-const  candidate   = document.getElementsByClassName('vote__message');
+const  candidate   = document.getElementsByClassName('candidate');
+const  candidate_vote = document.getElementsByClassName('candidate_vote');
+const message = document.getElementsByClassName('vote__message');
 let    data;
+let like = null;
+let dislike =null;
 
 function load(){
     data = JSON.parse(localStorage.getItem('votes'));
@@ -32,6 +36,7 @@ function load(){
 
 function save(){   
     localStorage.setItem('votes',JSON.stringify(dataVotes));     
+    
 }
 
 function vote(p_element,p_like,p_dislike){   
@@ -42,7 +47,7 @@ function vote(p_element,p_like,p_dislike){
     candidate_dislikes  = candidate_dislikes + p_dislike;
     dataVotes[p_element].likes = candidate_likes;
     dataVotes[p_element].dislikes = candidate_dislikes;    
-    save();
+    save();  
 }
 
 function paint(i_result){
@@ -79,14 +84,26 @@ for(let i_votes=0; i_votes<votes.length;i_votes++){
         if(i_votes===like){
             vote(i_votes,1,0)   
             paint(i_votes);  
+            candidate_vote[i_votes].classList.toggle('none');
+            message[i_votes].classList.toggle('none');
             like=null;
+            
         }else if(i_votes===dislike){
             vote(i_votes,0,1)
             paint(i_votes); 
+            candidate_vote[i_votes].classList.toggle('none');
+            message[i_votes].classList.toggle('none');
             dislike = null;
         }
     });
 }
+
+ for (let i_message = 0;i_message < message.length;i_message++){
+        message[i_message].addEventListener('click',function(){
+        candidate_vote[i_message].classList.toggle('none');
+        message[i_message].classList.toggle('none');
+    });
+ }
 
 window.addEventListener('load', function(e) {
     load();     

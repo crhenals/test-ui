@@ -303,8 +303,7 @@ body {
     left :10px;
 }
 
-.candidate_vote{
-    display :block;
+.candidate_vote{    
     margin-left: 35px;
     margin-right: 50px;
 }
@@ -413,7 +412,6 @@ body {
 }
 
 .vote__message{
-    display: none;
     margin-left: 35px;
 }
 
